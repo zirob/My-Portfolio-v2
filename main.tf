@@ -19,7 +19,7 @@ locals {
     # Always include the website's home page.
     ["index.html"],
 
-    # Find files under each website folder and exclude files whose names start with a dot.
+    # Find files under each website folder and exclude files whose.
     [for file in fileset("${path.module}/website/css", "**") : "css/${file}" if !startswith(basename(file), ".")],
     [for file in fileset("${path.module}/website/js", "**") : "js/${file}" if !startswith(basename(file), ".")],
     [for file in fileset("${path.module}/website/img", "**") : "img/${file}" if !startswith(basename(file), ".")]
